@@ -1,9 +1,12 @@
 # BinGPX
 Minimal binary representation for GPS data focused on file size
+while still maintaining precision (0.67cm lat and 1.34cm long at the Equator)
 
 # File Structure
 
 * All values are Big Endian
+
+* Floats are IEEE 754 Singles
 
 * Fixed-Point sign uses Sign-Magnitude form
 
@@ -42,11 +45,11 @@ If Track type is "Unordered" the additional info is added after:
 
 ## Connection data
 
-| Field         | Type             | Size       | Description |
-|---------------|------------------|------------|-------------|
-| Point A Index | Unsigned Integer | `TLS bits` |             |
-| Point B Index | Unsigned Integer | `TLS bits` |             |
-| Width         | Floating-Point   | `32 bits`  | Meters      |
+| Field         | Type                    | Size       | Description |
+|---------------|-------------------------|------------|-------------|
+| Point A Index | Unsigned Integer        | `TLS bits` |             |
+| Point B Index | Unsigned Integer        | `TLS bits` |             |
+| Width         | Floating-Point IEEE 754 | `32 bits`  | Meters      |
 
 ## Waypoint data
 
@@ -54,8 +57,8 @@ If Track type is "Unordered" the additional info is added after:
 |-------------|------------------------------------------------------|-----------|------------------------------------------|
 | Latitude    | Fixed-Point `[ 1 Sign \| 7 Integer \| 24 Fraction ]` | `32 bits` | Degrees `[-90 ≤ 90]`                     |
 | Longitude   | Fixed-Point `[ 1 Sign \| 8 Integer \| 23 Fraction ]` | `32 bits` | Degrees `[-180 ≤ 180]`                   |
-| Altitude    | Floating-Point                                       | `32 bits` | Meters                                   |
+| Altitude    | Floating-Point IEEE 754                              | `32 bits` | Meters                                   |
 | Heading     | Fixed-Point `[ 9 Integer \| 23 Fraction ]`           | `32 bits` | Degrees `[0 ≤ 360]`                      |
-| H. Accuracy | Floating-Point                                       | `32 bits` | Meters                                   |
-| V. Accuracy | Floating-Point                                       | `32 bits` | Meters                                   |
+| H. Accuracy | Floating-Point IEEE 754                              | `32 bits` | Meters                                   |
+| V. Accuracy | Floating-Point IEEE 754                              | `32 bits` | Meters                                   |
 | Timestamp   | Unsigned Integer                                     | `64 bits` | Milliseconds since `00:00:00 01/01/1970` |
