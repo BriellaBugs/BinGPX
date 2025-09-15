@@ -10,22 +10,22 @@ while still maintaining precision (0.67cm lat and 1.34cm long at the Equator)
 
 * Floats are IEEE 754 Singles
 
-* Fixed-Point sign uses Sign-Magnitude form
+* Fixed-Point sign uses Q-Format
 
 Example:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`[ 1 Sign | 7 Integer | 24 fraction              ]`
+`Q8.24 ` = `8 bits` for signed integer, `24 bits` for fractional part
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`[ 0      | 0010100   | 100000000000000000000000 ]` = `20.5`
+`UQ9.23` = `9 bits` for unsigned integer, `23 bits` for fractional part
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`[ 1      | 0010100   | 100000000000000000000000 ]` = `-20.5`
+Both of these examples use `32 bits` in total
 
 ## Header
 
 | Field        | Type             | Size      | Description                  |
 |--------------|------------------|-----------|------------------------------|
 | File Header  | Magic            | `32 bits` | Always `0x42 0x47 0x50 0x58` |
-| Version      | Unsigned Integer | `32 bits` | Currently `1036`             |
+| Version      | Unsigned Integer | `32 bits` | Currently `1057`             |
 
 ## For each track
 
@@ -55,12 +55,12 @@ If Track type is "Unordered" the additional info is added after:
 
 ## Waypoint data
 
-| Field       | Type                                                 | Size      | Description                              |
-|-------------|------------------------------------------------------|-----------|------------------------------------------|
-| Latitude    | Fixed-Point `[ 1 Sign \| 7 Integer \| 24 Fraction ]` | `32 bits` | Degrees `[-90 ≤ 90]`                     |
-| Longitude   | Fixed-Point `[ 1 Sign \| 8 Integer \| 23 Fraction ]` | `32 bits` | Degrees `[-180 ≤ 180]`                   |
-| Altitude    | Floating-Point IEEE 754                              | `32 bits` | Meters                                   |
-| Heading     | Fixed-Point `[ 9 Integer \| 23 Fraction ]`           | `32 bits` | Degrees `[0 ≤ 360]`                      |
-| H. Accuracy | Floating-Point IEEE 754                              | `32 bits` | Meters                                   |
-| V. Accuracy | Floating-Point IEEE 754                              | `32 bits` | Meters                                   |
-| Timestamp   | Unsigned Integer                                     | `64 bits` | Milliseconds since `00:00:00 01/01/1970` |
+| Field       | Type                    | Size      | Description                              |
+|-------------|-------------------------|-----------|------------------------------------------|
+| Latitude    | Fixed-Point `Q8.24`     | `32 bits` | Degrees `[-90 ≤ 90]`                     |
+| Longitude   | Fixed-Point `Q9.23`     | `32 bits` | Degrees `[-180 ≤ 180]`                   |
+| Altitude    | Floating-Point IEEE 754 | `32 bits` | Meters                                   |
+| Heading     | Fixed-Point `UQ9.23`    | `32 bits` | Degrees `[0 ≤ 360]`                      |
+| H. Accuracy | Floating-Point IEEE 754 | `32 bits` | Meters                                   |
+| V. Accuracy | Floating-Point IEEE 754 | `32 bits` | Meters                                   |
+| Timestamp   | Unsigned Integer        | `64 bits` | Milliseconds since `00:00:00 01/01/1970` |
