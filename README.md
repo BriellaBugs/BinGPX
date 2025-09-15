@@ -57,13 +57,19 @@ If Track type is "Unordered" then additional info is added:
 
 | Field       | Type                    | Size      | Description                                       |
 |-------------|-------------------------|-----------|---------------------------------------------------|
-| Latitude    | Fixed-Point `Q8.24`     | `32 bits` | Degrees `[-90 ≤ 90]`                              |
-| Longitude   | Fixed-Point `Q9.23`     | `32 bits` | Degrees `[-180 ≤ 180]`                            |
+| Latitude\*  | Fixed-Point `Q8.24`     | `32 bits` | Degrees `[-90 ≤ 90]`                              |
+| Longitude\* | Fixed-Point `Q9.23`     | `32 bits` | Degrees `[-180 ≤ 180]`                            |
 | Altitude    | Floating-Point IEEE 754 | `32 bits` | Meters                                            |
 | Heading     | Fixed-Point `UQ9.23`    | `32 bits` | Degrees `[0 ≤ 360]`                               |
 | H. Accuracy | Floating-Point IEEE 754 | `32 bits` | Meters                                            |
 | V. Accuracy | Floating-Point IEEE 754 | `32 bits` | Meters                                            |
-| Timestamp   | Unsigned Integer        | `64 bits` | Milliseconds since `00:00:00 01/01/1970` UTC Time |
+| Timestamp*  | Unsigned Integer        | `64 bits` | Milliseconds since `00:00:00 01/01/1970` UTC Time |
+
+>"\*" = Required
+>
+>Optional Fixed-Point fields are omitted by writing a value outside the given range
+>
+>Optional Floating-Point fields are omitted by NaN
 
 ## Color index
 
