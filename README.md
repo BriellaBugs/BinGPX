@@ -6,6 +6,8 @@ while still maintaining precision (0.67cm lat and 1.34cm long at the Equator)
 
 * All values are Big Endian
 
+* Files should use the `.bgpx` file extension
+
 * Floats are IEEE 754 Singles
 
 * Fixed-Point sign uses Sign-Magnitude form
