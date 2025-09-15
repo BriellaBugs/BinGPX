@@ -25,7 +25,7 @@ Both of these examples use `32 bits` in total
 | Field        | Type             | Size      | Description                  |
 |--------------|------------------|-----------|------------------------------|
 | File Header  | Magic            | `32 bits` | Always `0x42 0x47 0x50 0x58` |
-| Version      | Unsigned Integer | `32 bits` | Currently `1057`             |
+| Version      | Unsigned Integer | `32 bits` | Currently `1093`             |
 
 ## For each track
 
@@ -34,7 +34,7 @@ Both of these examples use `32 bits` in total
 | Start of Track | Magic            | `32 bits`                | Always `0x54 0x52 0x4B 0x53`                                 |
 | TLS            | Unsigned Integer | `2 bits`                 | Track List Size in bits = `(Value+1)*8`                      |
 | Track Type     | Unsigned Integer | `2 bits`                 | `0` = Ordered Track, `1` = Unordered Track, `2-3` = Reserved |
-| Padding        | Padding          | `4 bits`                 | Padding for byte-alignment                                   |
+| Track Color    | Unsigned Integer | `4 bits`                 | Color Index `[0 ≤ 15]`                                       |
 | Waypoint Count | Unsigned Integer | `TLS bits`               | Number of total waypoints                                    |
 | Waypoint Data  |                  | `32 bytes` each waypoint |                                                              |
 
@@ -64,3 +64,24 @@ If Track type is "Unordered" the additional info is added after:
 | H. Accuracy | Floating-Point IEEE 754 | `32 bits` | Meters                                            |
 | V. Accuracy | Floating-Point IEEE 754 | `32 bits` | Meters                                            |
 | Timestamp   | Unsigned Integer        | `64 bits` | Milliseconds since `00:00:00 01/01/1970` UTC Time |
+
+## Color index
+
+| Index | Name              | Hex       | Preview                                                                                                       |
+|-------|-------------------|-----------|---------------------------------------------------------------------------------------------------------------|
+| 0     | White             | `#FFFFFF` | ![White](https://img.shields.io/badge/%20%20-%23FFFFFF?style=for-the-badge&logo=&logoColor=white)             |
+| 1     | Yellow            | `#FCF404` | ![Yellow](https://img.shields.io/badge/%20%20-%23FCF404?style=for-the-badge&logo=&logoColor=white)            |
+| 2     | Orange            | `#FF6404` | ![Orange](https://img.shields.io/badge/%20%20-%23FF6404?style=for-the-badge&logo=&logoColor=white)            |
+| 3     | Red               | `#DC0808` | ![Red](https://img.shields.io/badge/%20%20-%23DC0808?style=for-the-badge&logo=&logoColor=white)               |
+| 4     | Pink              | `#F00884` | ![Pink](https://img.shields.io/badge/%20%20-%23F00884?style=for-the-badge&logo=&logoColor=white)              |
+| 5     | Purple            | `#4800A4` | ![Purple](https://img.shields.io/badge/%20%20-%234800A4?style=for-the-badge&logo=&logoColor=white)            |
+| 6     | Blue              | `#0000D4` | ![Blue](https://img.shields.io/badge/%20%20-%230000D4?style=for-the-badge&logo=&logoColor=white)              |
+| 7     | Light Blue        | `#00ACE8` | ![Light Blue](https://img.shields.io/badge/%20%20-%2300ACE8?style=for-the-badge&logo=&logoColor=white)        |
+| 8     | Green             | `#20B814` | ![Green](https://img.shields.io/badge/%20%20-%2320B814?style=for-the-badge&logo=&logoColor=white)             |
+| 9     | Dark Green        | `#006410` | ![Dark Green](https://img.shields.io/badge/%20%20-%23006410?style=for-the-badge&logo=&logoColor=white)        |
+| 10    | Brown             | `#582C04` | ![Brown](https://img.shields.io/badge/%20%20-%23582C04?style=for-the-badge&logo=&logoColor=white)             |
+| 11    | Metallic Sunburst | `#907038` | ![Metallic Sunburst](https://img.shields.io/badge/%20%20-%23907038?style=for-the-badge&logo=&logoColor=white) |
+| 12    | Light Gray        | `#C0C0C0` | ![Light Gray](https://img.shields.io/badge/%20%20-%23C0C0C0?style=for-the-badge&logo=&logoColor=white)        |
+| 13    | Gray              | `#808080` | ![Gray](https://img.shields.io/badge/%20%20-%23808080?style=for-the-badge&logo=&logoColor=white)              |
+| 14    | Dark Gray         | `#404040` | ![Dark Gray](https://img.shields.io/badge/%20%20-%23404040?style=for-the-badge&logo=&logoColor=white)         |
+| 15    | Black             | `#000000` | ![Black](https://img.shields.io/badge/%20%20-%23000000?style=for-the-badge&logo=&logoColor=white)             |
