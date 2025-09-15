@@ -26,7 +26,7 @@ Example:
 
 | Field          | Type             | Size                     | Description                                                  |
 |----------------|------------------|--------------------------|--------------------------------------------------------------|
-| Start of Track | Magic            | `32 bits`                | Always `0x54 0x52 0x48 0x53`                                 |
+| Start of Track | Magic            | `32 bits`                | Always `0x54 0x52 0x4B 0x53`                                 |
 | TLS            | Unsigned Integer | `2 bits`                 | Track List Size in bits = `(Value+1)*8`                      |
 | Track Type     | Unsigned Integer | `2 bits`                 | `0` = Ordered Track, `1` = Unordered Track, `2-3` = Reserved |
 | Padding        | Padding          | `4 bits`                 | Padding for byte-alignment                                   |
