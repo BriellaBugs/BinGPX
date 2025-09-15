@@ -92,3 +92,23 @@ If Track type is "Unordered" then additional info is added, "Ordered" Track Type
 | 13    | Gray              | `#808080` | ![Gray](https://img.shields.io/badge/%20%20-%23808080?style=for-the-badge&logo=&logoColor=white)              |
 | 14    | Dark Gray         | `#404040` | ![Dark Gray](https://img.shields.io/badge/%20%20-%23404040?style=for-the-badge&logo=&logoColor=white)         |
 | 15    | Black             | `#000000` | ![Black](https://img.shields.io/badge/%20%20-%23000000?style=for-the-badge&logo=&logoColor=white)             |
+
+# Examples
+
+## Header
+
+`42 47 50 58 00 00 04 45`
+
+`AA AA AA AA BB BB BB BB`
+
+* `A`: Magic Nunber
+* `B`: Version (`1093`)
+
+## Ordered Track with one waypoint
+
+`54 52 4B 53 93 00 00 01`
+
+`AA AA AA AA BB CC CC CC`
+
+* `A`: Magic Number
+* `B`: `0bXXYYZZZZ` `X`: TLS (`24 bits`) `Y`: Track Type (Ordered) `Z`: Color (Red)
