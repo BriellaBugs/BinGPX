@@ -95,18 +95,25 @@ If Track type is "Unordered" then additional info is added, "Ordered" Track Type
 
 # Examples
 
-## Header
+## Header + Ordered Track with one waypoint
 
-`42 47 50 58 00 00 04 45`
+```
+42 47 50 58 00 00 04 45
+54 52 4B 53 93 00 00 01
+20 EE E5 1A CF 81 F6 8D
+42 FA 99 9A FF FF FF FF
+40 79 99 9A 7F C0 00 00
+00 00 01 99 2C 23 83 88
+```
+
+* `42 47 50 58 00 00 04 45`
 
 | Hex           | Description         |
 |---------------|---------------------|
 | `42 47 50 58` | Header Magic Number |
 | `00 00 04 45` | Version (`1093`)    |
 
-## Ordered Track with one waypoint
-
-`54 52 4B 53 93 00 00 01`
+* `54 52 4B 53 93 00 00 01`
 
 | Hex           | Description                 |
 |---------------|-----------------------------|
@@ -117,12 +124,7 @@ If Track type is "Unordered" then additional info is added, "Ordered" Track Type
 | > `0b0011`    | Track Color ("Red")         |
 | `00 00 01`    | Waypoint Count (`1`)        |
 
-`
-20 EE E5 1A CF 81 F6 8D
-42 FA 99 9A FF FF FF FF
-40 79 99 9A 7F C0 00 00
-00 00 01 99 2C 23 83 88
-`
+* `20 EE E5 1A CF 81 F6 8D 42 FA 99 9A FF FF FF FF 40 79 99 9A 7F C0 00 00 00 00 01 99 2C 23 83 88`
 
 | Hex                       | Description                                                                                |
 |---------------------------|--------------------------------------------------------------------------------------------|
