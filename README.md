@@ -33,7 +33,7 @@ Minimal binary representation for GPS data focused on file size
 | Waypoint Count | Unsigned Integer | `TLS bits`               | Number of total waypoints                                    |
 | Waypoint Data  |                  | `32 bytes` each waypoint |                                                              |
 
-If Track type is 01 the additional info is added after:
+If Track type is "Unordered" the additional info is added after:
 
 | Field            | Type             | Size                              | Description                                   |
 |------------------|------------------|-----------------------------------|-----------------------------------------------|
