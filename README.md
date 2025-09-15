@@ -47,14 +47,14 @@ If Track type is "Unordered" then additional info is added, "Ordered" Track Type
 | Connection Count | Unsigned Integer | `TLS bits`              | Number of total connections between waypoints |
 | Connection Data  |                  | `TLS*2` each connection |                                               |
 
-## Connection data
+## Connection data (1 for each connection)
 
 | Field         | Type                    | Size       | Description |
 |---------------|-------------------------|------------|-------------|
 | Point A Index | Unsigned Integer        | `TLS bits` |             |
 | Point B Index | Unsigned Integer        | `TLS bits` |             |
 
-## Waypoint data
+## Waypoint data (1 for each waypoint)
 
 | Field       | Type                    | Size      | Description                                       |
 |-------------|-------------------------|-----------|---------------------------------------------------|
