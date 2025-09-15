@@ -99,16 +99,37 @@ If Track type is "Unordered" then additional info is added, "Ordered" Track Type
 
 `42 47 50 58 00 00 04 45`
 
-`AA AA AA AA BB BB BB BB`
-
-* `A`: Magic Nunber
-* `B`: Version (`1093`)
+| Hex           | Description         |
+|---------------|---------------------|
+| `42 47 50 58` | Header Magic Number |
+| `00 00 04 45` | Version (`1093`)    |
 
 ## Ordered Track with one waypoint
 
 `54 52 4B 53 93 00 00 01`
 
-`AA AA AA AA BB CC CC CC`
+| Hex           | Description                 |
+|---------------|-----------------------------|
+| `54 52 4B 53` | Track Start Magic Number    |
+| `93`          | Track Flags                 |
+| > `0b10`      | Track List Size (`24 bits`) |
+| > `0b01`      | Track Type ("Ordered")      |
+| > `0b0011`    | Track Color ("Red")         |
+| `00 00 01`    | Waypoint Count (`1`)        |
 
-* `A`: Magic Number
-* `B`: `0bXXYYZZZZ` `X`: TLS (`24 bits`) `Y`: Track Type (Ordered) `Z`: Color (Red)
+`
+20 EE E5 1A CF 81 F6 8D
+42 FA 99 9A FF FF FF FF
+40 79 99 9A 7F C0 00 00
+00 00 01 99 2C 23 83 88
+`
+
+| Hex                       | Description                                                                                |
+|---------------------------|--------------------------------------------------------------------------------------------|
+| `20 EE E5 1A`             | Latitude (`32.93318331241608` degrees)                                                     |
+| `CF 81 F6 8D`             | Longitude (`-96.98466336727142` degrees)                                                   |
+| `42 FA 99 9A`             | Altitude (`125.3` meters)                                                                  |
+| `FF FF FF FF`             | Heading (Omitted)                                                                          |
+| `40 79 99 9A`             | Horizontal Accuracy (`3.9` meters)                                                         |
+| `7F C0 00 00`             | Vertical Accuracy (Omitted)                                                                |
+| `00 00 01 99 2C 23 83 88` | 64-bit UNIX Timestamp (`1757382149000` milliseconds) (`Tue Sep 09 2025 01:42:29 GMT+0000`) |
