@@ -35,7 +35,7 @@ Both of these examples use `32 bits` in total
 |----------------|------------------|--------------------------|------------------------------------------------------------------------------------------------------------|
 | Start of Track | Magic            | `32 bits`                | Always `0x54 0x52 0x4B 0x53`                                                                               |
 | **TLS**        | Unsigned Integer | `2 bits`                 | Track List Size in bits = `(Value+1)*8`                                                                    |
-| Track Type     | Unsigned Integer | `2 bits`                 | `0` = Ordered Track, `1` = Unordered Track, `2` = Area, automatically connects the first and last waypoint |
+| Track Type     | Unsigned Integer | `2 bits`                 | `0` = Ordered Track, `1` = Unordered Track, `2` = Ordered Area, automatically connects the first and last waypoint |
 | Track Color    | Unsigned Integer | `4 bits`                 | Color Index `[0 ≤ 15]`                                                                                     |
 | Waypoint Count | Unsigned Integer | `TLS bits`               | Number of total waypoints                                                                                  |
 | Waypoint Data  |                  | `32 bytes` each waypoint |                                                                                                            |
