@@ -12,6 +12,8 @@ while still maintaining precision (0.67cm lat and 1.34cm long at the Equator)
 
 * Fixed-Point sign uses Q-Format
 
+* No byte-padding, values are the exact size as stated
+
 Example:
 
 `Q8.24 ` = `8 bits` for signed integer, `24 bits` for fractional part
