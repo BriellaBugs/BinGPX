@@ -59,5 +59,3 @@ If Track type is "Unordered" the additional info is added after:
 | H. Accuracy | Floating-Point                                       | `32 bits` | Meters                                   |
 | V. Accuracy | Floating-Point                                       | `32 bits` | Meters                                   |
 | Timestamp   | Unsigned Integer                                     | `64 bits` | Milliseconds since `00:00:00 01/01/1970` |
-
-This is a test of Secret Scanning: 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
