@@ -27,18 +27,18 @@ Both of these examples use `32 bits` in total
 | Field        | Type             | Size      | Description                  |
 |--------------|------------------|-----------|------------------------------|
 | File Header  | Magic            | `32 bits` | Always `0x42 0x47 0x50 0x58` |
-| Version      | Unsigned Integer | `32 bits` | Currently `1093`             |
+| Version      | Unsigned Integer | `32 bits` | Currently `1094`             |
 
 ## For each track
 
-| Field          | Type             | Size                     | Description                                                  |
-|----------------|------------------|--------------------------|--------------------------------------------------------------|
-| Start of Track | Magic            | `32 bits`                | Always `0x54 0x52 0x4B 0x53`                                 |
-| **TLS**        | Unsigned Integer | `2 bits`                 | Track List Size in bits = `(Value+1)*8`                      |
-| Track Type     | Unsigned Integer | `2 bits`                 | `0` = Ordered Track, `1` = Unordered Track, `2-3` = Reserved |
-| Track Color    | Unsigned Integer | `4 bits`                 | Color Index `[0 ≤ 15]`                                       |
-| Waypoint Count | Unsigned Integer | `TLS bits`               | Number of total waypoints                                    |
-| Waypoint Data  |                  | `32 bytes` each waypoint |                                                              |
+| Field          | Type             | Size                     | Description                                                                                                |
+|----------------|------------------|--------------------------|------------------------------------------------------------------------------------------------------------|
+| Start of Track | Magic            | `32 bits`                | Always `0x54 0x52 0x4B 0x53`                                                                               |
+| **TLS**        | Unsigned Integer | `2 bits`                 | Track List Size in bits = `(Value+1)*8`                                                                    |
+| Track Type     | Unsigned Integer | `2 bits`                 | `0` = Ordered Track, `1` = Unordered Track, `2` = Area, automatically connects the first and last waypoint |
+| Track Color    | Unsigned Integer | `4 bits`                 | Color Index `[0 ≤ 15]`                                                                                     |
+| Waypoint Count | Unsigned Integer | `TLS bits`               | Number of total waypoints                                                                                  |
+| Waypoint Data  |                  | `32 bytes` each waypoint |                                                                                                            |
 
 If Track type is "Unordered" then additional info is added, "Ordered" Track Types don't include this:
 
@@ -98,7 +98,7 @@ If Track type is "Unordered" then additional info is added, "Ordered" Track Type
 ## Header + Ordered Track with one waypoint
 
 ```
-42 47 50 58 00 00 04 45
+42 47 50 58 00 00 04 46
 54 52 4B 53 93 00 00 01
 20 EE E5 1A CF 81 F6 8D
 42 FA 99 9A FF FF FF FF
@@ -106,12 +106,12 @@ If Track type is "Unordered" then additional info is added, "Ordered" Track Type
 00 00 01 99 2C 23 83 88
 ```
 
-* `42 47 50 58 00 00 04 45`
+* `42 47 50 58 00 00 04 46`
 
 | Hex           | Description         |
 |---------------|---------------------|
 | `42 47 50 58` | Header Magic Number |
-| `00 00 04 45` | Version (`1093`)    |
+| `00 00 04 46` | Version (`1094`)    |
 
 * `54 52 4B 53 93 00 00 01`
 
