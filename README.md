@@ -38,7 +38,7 @@ Both of these examples use `32 bits` in total
 | Waypoint Count | Unsigned Integer | `TLS bits`               | Number of total waypoints                                    |
 | Waypoint Data  |                  | `32 bytes` each waypoint |                                                              |
 
-If Track type is "Unordered" the additional info is added after:
+If Track type is "Unordered" then additional info is added:
 
 | Field            | Type             | Size                              | Description                                   |
 |------------------|------------------|-----------------------------------|-----------------------------------------------|
