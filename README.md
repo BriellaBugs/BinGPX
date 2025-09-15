@@ -42,10 +42,10 @@ Both of these examples use `32 bits` in total
 
 If Track type is "Unordered" then additional info is added:
 
-| Field            | Type             | Size                              | Description                                   |
-|------------------|------------------|-----------------------------------|-----------------------------------------------|
-| Connection Count | Unsigned Integer | `TLS bits`                        | Number of total connections between waypoints |
-| Connection Data  |                  | `TLS*2 + 32 bits` each connection |                                               |
+| Field            | Type             | Size                    | Description                                   |
+|------------------|------------------|-------------------------|-----------------------------------------------|
+| Connection Count | Unsigned Integer | `TLS bits`              | Number of total connections between waypoints |
+| Connection Data  |                  | `TLS*2` each connection |                                               |
 
 ## Connection data
 
@@ -53,7 +53,6 @@ If Track type is "Unordered" then additional info is added:
 |---------------|-------------------------|------------|-------------|
 | Point A Index | Unsigned Integer        | `TLS bits` |             |
 | Point B Index | Unsigned Integer        | `TLS bits` |             |
-| Width         | Floating-Point IEEE 754 | `32 bits`  | Meters      |
 
 ## Waypoint data
 
