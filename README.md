@@ -134,4 +134,4 @@ If Track type is "Unordered" then additional info is added, "Ordered" Track Type
 | `FF FF FF FF`             | Heading (Omitted)                                                                          |
 | `40 79 99 9A`             | Horizontal Accuracy (`3.9` meters)                                                         |
 | `7F C0 00 00`             | Vertical Accuracy (Omitted)                                                                |
-| `00 00 01 99 2C 23 83 88` | 64-bit UNIX Timestamp (`1757382149000` milliseconds) (`Tue Sep 09 2025 01:42:29 GMT+0000`) |
+| `00 00 01 99 2C 23 83 88` | 64-bit UNIX Timestamp (`1757382149000` milliseconds) (`Tue Sep 09 2025 01:42:29 UTC+0000`) |
