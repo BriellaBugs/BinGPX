@@ -58,8 +58,8 @@ If Track type is "Unordered" then additional info is added, "Ordered" Track Type
 
 | Field       | Type                    | Size      | Description                                       |
 |-------------|-------------------------|-----------|---------------------------------------------------|
-| Latitude\*  | Fixed-Point `Q8.24`     | `32 bits` | Degrees `[-90 ≤ 90]`                              |
-| Longitude\* | Fixed-Point `Q9.23`     | `32 bits` | Degrees `[-180 ≤ 180]`                            |
+| Latitude\*  | Fixed-Point `Q8.24`     | `32 bits` | Degrees `[-90 ≤ 90]` WGS84 datum                  |
+| Longitude\* | Fixed-Point `Q9.23`     | `32 bits` | Degrees `[-180 ≤ 180]` WGS84 datum                |
 | Altitude    | Floating-Point IEEE 754 | `32 bits` | Meters                                            |
 | Heading     | Fixed-Point `UQ9.23`    | `32 bits` | Degrees `[0 ≤ 360]`                               |
 | H. Accuracy | Floating-Point IEEE 754 | `32 bits` | Meters                                            |
