@@ -1,5 +1,5 @@
 # BinGPX
-Minimal binary representation for GPS data focused on file size
+32-bit binary representation for GPS data focused on file size
 while still maintaining precision (0.67cm lat and 1.34cm long at the Equator)
 
 # File Structure
